@@ -1,25 +1,18 @@
 import 'package:dio/dio.dart';
-import 'package:mrich_frontend/features/auth/data/models/loginRequest.dart';
-import 'package:mrich_frontend/features/auth/data/models/tokenResponse.dart';
+import 'package:mrich_frontend/core/network/dioClient.dart';
 
 class AuthApi {
-  final Dio _dio;
+  final Dio _dio = DioClient.instance;
 
-  AuthApi(this._dio);
-
-  Future<TokenResponse> login(LoginRequest request) async {
-    final response = await _dio.post(
-      '/api/v1/auth/login',
-      data: request.toJson(),
-    );
-    return TokenResponse.fromJson(response.data);
+  Future<Response> login(Map<String, dynamic> data) {
+    return _dio.post('/auth/login', data: data);
   }
 
-  Future<TokenResponse> refreshToken(String refreshToken) async {
-    final response = await _dio.post(
-      '/api/v1/auth/refresh',
-      data: {'refreshToken': refreshToken},
-    );
-    return TokenResponse.fromJson(response.data);
+  Future<Response> register(Map<String, dynamic> data) {
+    return _dio.post('/user/register', data: data);
+  }
+
+  Future<Response> refresh(String refreshToken) {
+    return _dio.post('/auth/refresh', data: {'refreshToken': refreshToken});
   }
 }
