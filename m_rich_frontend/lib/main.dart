@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mrich_frontend/features/auth/authApi.dart';
+import 'package:mrich_frontend/features/auth/data/api/authApi.dart';
 import 'package:mrich_frontend/features/auth/domain/repositories/authRepository.dart';
 import 'package:mrich_frontend/features/auth/presentation/blocs/authBloc.dart';
 import 'package:mrich_frontend/features/auth/presentation/screens/loginScreen.dart';

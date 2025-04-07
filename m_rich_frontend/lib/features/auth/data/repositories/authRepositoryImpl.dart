@@ -1,4 +1,4 @@
-import 'package:mrich_frontend/features/auth/authApi.dart';
+import 'package:mrich_frontend/features/auth/data/api/authApi.dart';
 import 'package:mrich_frontend/features/auth/data/models/loginRequest.dart';
 import 'package:mrich_frontend/features/auth/data/models/tokenResponse.dart';
 import 'package:mrich_frontend/features/auth/domain/repositories/authRepository.dart';
